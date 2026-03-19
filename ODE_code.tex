@@ -1,0 +1,72 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage[utf8]{inputenc}
+\usepackage[greek,english]{babel}
+\usepackage{alphabeta}
+\usepackage{amsmath}  % Το κυριότερο για εξισώσεις
+\usepackage{amssymb}  % Για σύμβολα όπως το κενό σύνολο, ανήκει, κλπ
+\usepackage{amsfonts} % Για γραμματοσειρές μαθηματικών
+
+\title{Differential Equations Exercises}
+\author{Angelos Karadimitriou}
+\date{Ongoing project - New exercises will be added}
+
+\begin{document}
+
+\maketitle
+
+\section{Exercises}
+\subsection{Exercise 1:}
+Solve the differential equation :
+$$y' = \frac{-1}{x^2} - \frac{y}{x} + y^2 $$
+if one solution of the equation is $y_1=\frac{1}{x}$
+\\\\
+\textbf{Solution:}
+\\
+This is a \textbf{Ricatti Equation}. We consider the following equation:
+$$y(x) = y_1(x) + z = \frac{1}{x} + z$$
+Then we differentiate with respect to $x$ :
+$$y'(x) = \frac{-1}{x^2} + z'$$
+Now we substitute for the given equation :
+\begin{align*}
+   -\frac{1}{x^2}+z' &= -\frac{1}{x^2}-\frac{\frac{1}{x}+z}{x}+\left(\frac{1}{x}+z\right)^2  \iff \\
+z' &= \frac{-\frac{1}{x}-\frac{zx}{x}}{x}+\left(\frac{1}{x^2}+\frac{2z}{x}+z^2\right)  \\
+&= \frac{\frac{-1-zx}{x}}{x}+\left(\frac{1}{x^2}+\frac{2z}{x}+z^2\right)  \\
+&= \frac{-1-zx}{x^2}+\frac{1}{x^2}+\frac{2zx}{x^2}+z^2  \\
+&= \frac{-1-zx+1+2zx}{x^2}+z^2  \\
+&= \frac{z}{x}+z^2  \\
+\end{align*}
+
+Let $u = \frac{1}{z} \iff z = \frac{1}{u}$ which is a \textbf{Bernoulli Equation} substitution : 
+
+\begin{align*}
+    \left(\frac{1}{u}\right)'-\frac{1}{ux} &= \left(\frac{1}{u}\right)^2 \\
+    \left(\frac{1}{u}\right)' &= \frac{1}{u^2}+\frac{1}{ux}  \\
+    -\frac{1}{u^2}u' &= \frac{1}{u^2}+\frac{1}{ux}  \\
+    -u' &= 1+\frac{u}{x} \\
+    u'+\frac{u}{x} &= -1 
+\end{align*}
+
+Now we use the integrating factor : 
+$$μ(x) = e^{\int\frac{1}{x}dx} = e^{lnx} = x $$
+
+We multiply with the integrating factor and we find $u(x)$ :
+\begin{align*}
+    μ(x)u(x) &= μ(x)(-1) \\
+    xu(x) &= -\int{x}\,dx \\
+    u(x)x &= -\frac{x^2}{2}+c \\
+    u(x) &= -\frac{x}{2}+\frac{c}{x}
+\end{align*}
+
+Therefore, the general solution is :
+\begin{align*}
+    y(x) &= \frac{1}{x}+z \\
+    y(x) &= \frac{1}{x}+\frac{1}{u(x)} \\
+    y(x) &= \frac{1}{x}+\frac{1}{-\frac{x}{2}+\frac{c}{x}} \\ 
+    y(x) &= \frac{1}{x}+\frac{2x}{2c-x^2} ,\quad c \in \mathbb{R}
+\end{align*}
+
+
+
+
+\end{document}
