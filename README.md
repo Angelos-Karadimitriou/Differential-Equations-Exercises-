@@ -1,2 +1,2 @@
 # Differential-Equations-Exercises-
-Solved Differential Equations exercises.
+Here you will find a collection of ODE exercises, typeset in LaTeX.
