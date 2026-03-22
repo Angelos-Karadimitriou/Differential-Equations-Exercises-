@@ -20,8 +20,7 @@
 Solve the differential equation :
 $$y' = -\frac{1}{x^2} - \frac{y}{x} + y^2 $$
 if one solution of the equation is $y_1=\frac{1}{x}$. \\\\
-\textbf{Solution:}
-\\
+\textbf{Solution:} \\
 This is a \textbf{Ricatti Equation}. We consider the following equation:
 $$y(x) = y_1(x) + z = \frac{1}{x} + z$$
 Then we differentiate with respect to $x$ :
@@ -129,7 +128,6 @@ We substitute the given initial value $y(1) = 0$ :
     3+c &= 1 \\
     c &= -2
 \end{align*}
-
 and we get the particular solution :
 $$y(x) = \ln{(5x-2x^2-2)}$$
 
@@ -191,5 +189,53 @@ where c is an arbitrary constant
       &=-t\cos t+\sin t + \frac{c_1t^2}{2}+c_2 
  \end{align*}
  where $c_1,c_2$ are arbitrary constants.
- 
+
+\newpage
+
+\subsection{Exercise 6:}
+Find the general solution of the differential equation:
+$$y''(t)+y(t) = 0, \,\, t \in \mathbb{R}$$
+around the point $t = 0$, using the power series method. \\ \\
+\textbf{Solution:} \\
+Using the power series method:
+$$y(t) = \sum_{n = 0}^{\infty}a_n(t-t_0)^n = \sum_{n = 0}^{\infty}a_nt^n$$
+First derivative:
+$$y'(t) = \sum_{n = 1}^{\infty}na_nt^{n-1}$$
+Second derivative:
+$$y''(t) = \sum_{n = 2}^{\infty}n(n-1)a_nt^{n-2}$$
+Now we substitute the second derivative into the given equation:
+\begin{align*}
+    y''(t)+y(t) &= 0 \\
+    \sum_{n = 2}^{\infty}n(n-1)a_nt^{n-2}+\sum_{n = 0}^{\infty}a_nt^n &= 0\\
+    \sum_{k = 0}^{\infty}(k+2)(k+1)a_{k+2}t^k+\sum_{k = 0}^{\infty}a_kt^k &= 0 \\
+    \sum_{n = 0}^{\infty}(n-2)(n-1)a_{n+2}t^n+\sum_{n = 0}^{\infty}a_nt^n &= 0 \\
+    \sum_{n = 0}^{\infty}t^n((n+2)(n+1)a_{n+2}+a_n) = 0
+\end{align*}
+We solve the equation:
+$$a_n+(n+2)(n+1)a_{n+2} = 0 \iff a_{n+2} = -\frac{a_n}{(n+2)(n+1)}$$
+For even terms (n = 2k-2): \\ \\
+For $n = 0: \, a_2 = -\frac{a_0}{1\cdot2} $ \\ \\
+For $n = 2: \, a_4 = -\frac{a_2}{3\cdot4} = \frac{a_0}{1\cdot2\cdot3\cdot4}$ \\ \\
+For $n = 4: \, a_6 = -\frac{a_4}{5\cdot6} = \frac{a_2}{3\cdot4\cdot5\cdot6} = -\frac{a_0}{1\cdot2\cdot3\cdot4\cdot5\cdot6}$ \\ \\
+By using mathematical induction we get:
+\begin{align*}
+    a_{2k} = (-1)^k\frac{a_0}{(2k)!} \tag{1} \label{even}
+\end{align*}    
+For odd terms (2k-1): \\ \\
+For $n = 1: \, a_3 = -\frac{a_1}{2\cdot3}$ \\ \\
+For $n = 3: \, a_5 = -\frac{a_3}{4\cdot5} = \frac{a_1}{2\cdot3\cdot4\cdot5\cdot6}$ \\ \\
+For $n = 5: \, a_7 = -\frac{a_5}{6\cdot7} = \frac{a_3}{4\cdot5\cdot6\cdot7} = -\frac{a_1}{2\cdot3\cdot4\cdot5\cdot6\cdot7}$\\ \\ 
+By using mathematical induction we get:
+\begin{align*}
+    a_{2k+1} = (-1)^k\frac{a_1}{(2k+1)!} \tag{2} \label{odd} 
+\end{align*}
+Using \eqref{even} and \eqref{odd} we find the general solution: \\
+\begin{align*}
+    y(t) &= \sum_{k = 0}^{\infty}a_{2k}t^{2k}+\sum_{k = 0}^{\infty}a_{2k+1}t^{2k+1} \\
+    &= a_0\sum_{k = 0}^{\infty}\frac{(-1)^kt^{2k}}{(2k)!}+a_1\sum_{k = 0}^{\infty}\frac{(-1)^kt^{2k+1}}{(2k+1)!} \\
+    &= a_0\cos t + a_1\sin t
+\end{align*}
+
+
+
 \end{document}
