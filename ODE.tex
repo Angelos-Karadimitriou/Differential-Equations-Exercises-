@@ -34,9 +34,7 @@ z' &= \frac{-\frac{1}{x}-\frac{zx}{x}}{x}+\left(\frac{1}{x^2}+\frac{2z}{x}+z^2\r
 &= \frac{-1-zx+1+2zx}{x^2}+z^2  \\
 &= \frac{z}{x}+z^2  \\
 \end{align*}
-
 Let $u = \frac{1}{z} \iff z = \frac{1}{u}$ which is a \textbf{Bernoulli Equation} substitution : 
-
 \begin{align*}
     \left(\frac{1}{u}\right)'-\frac{1}{ux} &= \left(\frac{1}{u}\right)^2 \\
     \left(\frac{1}{u}\right)' &= \frac{1}{u^2}+\frac{1}{ux}  \\
@@ -44,18 +42,15 @@ Let $u = \frac{1}{z} \iff z = \frac{1}{u}$ which is a \textbf{Bernoulli Equation
     -u' &= 1+\frac{u}{x} \\
     u'+\frac{u}{x} &= -1 
 \end{align*}
-
 Now we use the integrating factor : 
 $$μ(x) = e^{\int\frac{1}{x}dx} = e^{lnx} = x $$
-
-We multiply with the integrating factor and we find $u(x)$ :
+We multiply by the integrating factor and determine $u(x)$ as follows :
 \begin{align*}
     (μ(x)u(x))' &= μ(x)(-1) \\
     xu(x) &= -\int{x}\,dx \\
     u(x)x &= -\frac{x^2}{2}+c \\
     u(x) &= -\frac{x}{2}+\frac{c}{x}
 \end{align*}
-
 Therefore, the general solution is :
 \begin{align*}
     y(x) &= \frac{1}{x}+z \\
@@ -64,17 +59,14 @@ Therefore, the general solution is :
     y(x) &= \frac{1}{x}+\frac{2x}{2c-x^2} ,\quad c \in \mathbb{R}
 \end{align*}
 
-
 \newpage
 
 \subsection{Exercise 2:}
 Solve the differential equation :
 $$x^2y'+2xy-y^3 = 0$$ 
 \textbf{Solution:} \\
-We will use the \textbf{Bernoulli Transformation} with $r = 3$.
-\\
-Let:
-$$u(x) = y^{1-r}(x) = y^{-2}(x) = \frac{1}{y^{2}(x)}$$ 
+We will use the \textbf{Bernoulli Transformation} with $r = 3$. \\
+Let: $$u(x) = y^{1-r}(x) = y^{-2}(x) = \frac{1}{y^{2}(x)}$$ 
 Then we differentiate with respect to x:
 $$ u'(x) = -2y^{-3}(x)y'(x) = -\frac{2}{y^3(x)}y'(x) $$
 Now we multiply the given differential equation by:
@@ -100,7 +92,7 @@ we solve:
 \newpage
 
 \subsection{Exercise 3:}
-Find the solution of the Initial Value Problem:
+Find the solution to the Initial Value Problem:
 \begin{align*}
     y'(x) &= e^{-y}(5-4x) \\
     y(1) &= 0
@@ -117,8 +109,7 @@ Find the solution of the Initial Value Problem:
      \ln{e^y} &= \ln{(5x-2x^2+c)} \\
      y(x) &= ln{(5x-2x^2+c)} \\
 \end{align*}
-which represents the general solution of the equation. \\
-\\
+which represents the general solution of the equation. \\ \\
 We substitute the given initial value $y(1) = 0$ :
 \begin{align*}
     y(1) &= 0 \\
@@ -146,24 +137,25 @@ we check if the differential equation is exact:
     N(x,y) &= 2xy \\
     N_{x}(x,y) &= 2y     
 \end{align*}
-We get that:
+We understand that:
 $M_{y}(x,y) = N_{x}(x,y)$, which means that the differential equation is exact. \\
 Let:
 \begin{align}
-    Ψ_{x}(x,y) &= \cos x-x\sin x+y^2  \label{ψx} \\
-    Ψ_{y}(x,y) &= 2xy \label{ψy}
+    \Psi_{x}(x,y) &= \cos x-x\sin x+y^2  \label{ψx} \\
+    \Psi_{y}(x,y) &= 2xy \label{ψy}
 \end{align}
 We integrate equation \eqref{ψx} with respect to $x$: \\
 $$\int(\cos x-x\sin x+y^2)\,dx = \int(\cos x-x\sin x)\,dx+\int y^2\,dx = x\cos x+xy^2+h(y)$$
 We differentiate with respect to y:
-$$Ψ_{y}(x,y) = 0+2xy+h_{y}(y) = 2xy+h_{y}(y)$$
+$$\Psi_{y}(x,y) = 0+2xy+h_{y}(y) = 2xy+h_{y}(y)$$
 Comparing this with \eqref{ψy}:
 $$2xy+h_{y}(y) = 2xy \iff h_{y}(y) = 0 \iff h(y) = c_1$$
 Therefore, the general solution is:
-$$Ψ(x,y) = c \iff x\cos x+xy^2+c_1 = c \iff x\cos x+xy^2 = c$$ \\
+$$\Psi(x,y) = c \iff x\cos x+xy^2+c_1 = c \iff x\cos x+xy^2 = c$$ \\
 where c is an arbitrary constant
 
 \newpage
+
  \subsection{Exercise 5:} 
  Find the general solution of the differential equation:
  $$y''(t)-\frac{1}{t}y'(t) = t\cos t,\,\, t>0$$
@@ -236,6 +228,237 @@ Using \eqref{even} and \eqref{odd} we find the general solution: \\
     &= a_0\cos t + a_1\sin t
 \end{align*}
 
+\newpage
 
+\subsection{Exercise 7:}
+Consider the following system of differential equations: \\
+$$x'(t) = 
+\begin{pmatrix}
+    -1 & 0 & 0 & 0 \\
+    0 & 0 & 2 & 0 \\
+    0 & -2 & 0 & 0 \\
+    0 & 0 & 0 & 2
+\end{pmatrix} 
+x(t)$$
+Find a fundamental matrix of solutions and identify all bounded solutions. \\ \\
+\textbf{Solution:} \\
+Let:
+\begin{align*}
+    u_{1} =
+    \begin{pmatrix}
+        u_{11} & u_{12} & u_{13} & u_{14} 
+    \end{pmatrix}^T \\
+    u_{2} =
+    \begin{pmatrix}
+        u_{21} & u_{22} & u_{23} & u_{24}
+    \end{pmatrix}^T \\
+    u_{3} = 
+    \begin{pmatrix}
+        u_{31} & u_{32} & u_{33} & u_{34}
+    \end{pmatrix}^T \\
+    u_{4} =
+    \begin{pmatrix}
+        u_{41} & u_{42} & u_{43} & u_{44}
+    \end{pmatrix}^T \\
+\end{align*}
+We calculate the determinant: \\
+\begin{align*}
+    det(A-\lambda I_4) &= 0 \\
+    det
+    \begin{pmatrix}
+    -1-\lambda & 0 & 0 & 0 \\
+    0 & 0-\lambda & 2 & 0 \\
+    0 & -2 & 0-\lambda & 0 \\
+    0 & 0 & 0 & 2-\lambda \\
+\end{pmatrix} 
+&= 0 \\
+(-1-\lambda)
+\begin{vmatrix}
+    -\lambda & 2 & 0 \\
+    -2 & -\lambda & 0 \\
+    0 & 0 & 2-\lambda \\ 
+\end{vmatrix}
+&= 0 \\
+(-1-\lambda)
+\begin{pmatrix}
+    -\lambda
+    \begin{vmatrix}
+        -\lambda & 0 \\
+        0 & 2-\lambda \\
+    \end{vmatrix}
+    -2
+    \begin{vmatrix}
+        -2 & 0 \\
+        0 & 2-\lambda \\
+    \end{vmatrix}
+\end{pmatrix}
+&= 0 \\
+(-1-\lambda)[\lambda^2(2-\lambda)+4(2-\lambda)] &= 0 \\
+-(1+\lambda)[(2-\lambda)(\lambda^2+4)] &=0 \\
+\end{align*}
+and we find the eigenvalues: \\
+$$\lambda_{1} = -1, \, \lambda_{2} = 2, \, \lambda_{3} = 2i, \, \lambda_{4} = -2i $$ \\
+Now we calculate the eigenvectors: \\ \\
+For $\lambda_{1} = -1$: \\
+$$(A-\lambda_{1}I_{4})u_{1} = 0 \iff 
+\begin{pmatrix}
+     0 & 0 & 0 & 0 \\
+     0 & 1 & 2 & 0 \\
+     0 & -2 & 1 & 0 \\
+     0 & 0 & 0 & 3 \\
+\end{pmatrix}
+\begin{pmatrix}
+     u_{11} \\
+     u_{12} \\
+     u_{13} \\
+     u_{14} \\
+\end{pmatrix}
+= 0 $$
+By solving, we find: \\
+$$u_{11} = 1, \, u_{12} = u_{13} = u_{14} = 0 $$ \\
+Thus:
+$$u_{1} = 
+\begin{pmatrix}
+    1 & 0 & 0 & 0
+\end{pmatrix}$$
+and:
+$$x_1(t) = e^{\lambda_{1}t}u_{1} = e^{-t}
+\begin{pmatrix}
+    1 \\
+    0 \\
+    0 \\
+    0 \\
+\end{pmatrix}$$
+For $\lambda_{2} = 2:$
+$$(A-\lambda_{2}I_{4})u_{2} = 0 \iff 
+\begin{pmatrix}
+    -3 & 0 & 0 & 0 \\
+    0 & -2 & 2 & 0 \\
+    0 &-2 & -2 & 0 \\
+    0 & 0 & 0 & 0 \\
+\end{pmatrix}
+\begin{pmatrix}
+    u_{21} \\
+    u_{22} \\
+    u_{23} \\
+    u_{24} \\
+\end{pmatrix} 
+= 0$$
+By solving, we find:
+$$u_{21} = u_{22} = u_{23} = 0, \, u_{24} = 1$$
+Thus:
+$$u_{2} = 
+\begin{pmatrix}
+    0 & 0 & 0 & 1
+\end{pmatrix}$$
+and:
+$$x_{2}(t) = e^{\lambda_{2}t}u_{2} = e^{2t} 
+\begin{pmatrix}
+    0 \\
+    0 \\
+    0 \\
+    1 \\
+\end{pmatrix}$$
+For $\lambda_{3} = 2i$: \\
+$$(A-\lambda_{3}I_{4})u_{3} = 0 \iff 
+\begin{pmatrix}
+    -1-2i & 0 & 0 & 0 & \\
+    0 & -2i & 2 & 0 \\
+    0 & -2 & -2i & 0 \\
+    0 & 0 & 0 & 2-2i 
+\end{pmatrix}
+\begin{pmatrix}
+    u_{31} \\
+    u_{32} \\
+    u_{33} \\
+    u_{34} \\
+\end{pmatrix}
+= 0 $$
+By solving, we find:
+$$u_{31} = u_{34} = 0, \, u_{32} = 1, \, u_{33} = i$$
+Thus:
+$$u_{3} = 
+\begin{pmatrix}
+    0 & 1 & i & 0
+\end{pmatrix}$$
+and:
+$$w(t) = e^{2it} 
+\begin{pmatrix}
+    0 \\
+    1 \\
+    i \\
+    0 \\
+\end{pmatrix} =
+(\cos(2t)+i\sin(2t))
+\begin{pmatrix}
+    0 \\
+    1 \\
+    i \\
+    0 \\
+\end{pmatrix} =
+\begin{pmatrix}
+    0 \\
+    \cos(2t)+i\sin(2t) \\
+    -\sin(2t)+i\cos(2t) \\
+    0
+\end{pmatrix}$$
+Now we get:
+$$x_{3}(t) = Re(w) = 
+\begin{pmatrix}
+    0 \\
+    \cos(2t) \\
+    -\sin(2t) \\
+    0 \\
+\end{pmatrix}$$
+and 
+$$x_{4}(t) = Im(w) =
+\begin{pmatrix}
+    0 \\
+    \sin(2t) \\
+    \cos(2t) \\
+    0 \\
+\end{pmatrix}$$
+Now we get \textbf{the Fundamental Matrix}:
+$$\Phi(t) = 
+\begin{pmatrix}
+    e^{-t} & 0 & 0 & 0 \\
+    0 & 0 & \cos(2t) & \sin(2t) \\
+    0 & 0 & -\sin(2t) & \cos(2t) \\
+    0 & e^{2t} & 0 & 0 \\
+\end{pmatrix}$$
+and the general solution:
+$$x(t) = c_1
+\begin{pmatrix}
+    e^{-t} \\
+    0 \\
+    0 \\
+    0 \\
+\end{pmatrix}
++c_2
+\begin{pmatrix}
+    0 \\
+    0 \\
+    0 \\
+    e^{2t} \\
+\end{pmatrix}
++c_3
+\begin{pmatrix}
+    0 \\
+    \cos(2t) \\
+    -\sin(2t) \\
+    0 \\
+\end{pmatrix}
++c_4 
+\begin{pmatrix}
+    0 \\
+    \sin(2t) \\
+    \cos(2t) \\
+    0 \\
+\end{pmatrix}$$
+The functions $\cos(2t)$ and $\sin(2t)$ are bounded (trigonometric functions). \\
+The function $e^{-t}$ is bounded $\forall \, t$ \\
+The function $e^{2t}$ is not bounded: \\
+$$e^{2t} \xrightarrow{t\xrightarrow{}\infty} \infty$$
+and therefore, for the solution to be bounded, we must have: $c_2 = 0$
 
 \end{document}
